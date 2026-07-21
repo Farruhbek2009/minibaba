@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fcfcfc;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    text-align: center;
+    background: white;
+}
+.login-box h2{
+    margin-top: 13px;
+}
+.input-group {
+    margin-top: 11px;
+}
+.input-group p{
+    text-align: start;
+    font-size: 12px;
+}
+.input-group input{
+    margin-top: 7px;
+}
+.input-grxoup p{
+    margin-top: 37px;
+    margin-bottom:6px;
+    text-align: start;
+    font-size: 12px;
+}
+.lock-icon {
+    font-size: 22px;
+    color: #ff8c00;
+}
+
+.si {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 230, 237);
+}
+
+.input-field {
+    width: 100%;
+    height: 53px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 9px;
+}
+
+.divider {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.btn-main,
+.btn-reg {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-main {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    transition: all .41s ease;
+    margin-top: 14px;
+}
+
+.btn-main:hover {
+    background-color: orangered;
+}
+
+.btn-reg {
+    background: none;
+    border: 1px solid #ff8c00;
+    color: #ff8c00;
+    transition: all .42s ease;
+    margin-top: 9px;
+}
+
+.btn-reg:hover {
+    background-color: rgb(240, 238, 238);
+    color: black;
+    border: 1px solid black;
+}
+.forgot-link{
+    margin-top: 9px;
+    text-align: start;
+    font-size: 12px;
+    color: #ff8c00;
+}
+.or-text{
+    margin-top: 9px;
+}
+.or{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(190, 189, 189);
+    margin-top: 17px;
+}
+.lin{
+    display: flex;
+    gap: 11px;
+}
+.subtitle{
+    margin-top: 6px;
+}

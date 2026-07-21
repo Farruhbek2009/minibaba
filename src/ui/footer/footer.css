@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer {
+    background-color: #F5F2F0;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 40px 140px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.logo-card {
+    background-color: #F47B25;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.low {
+    display: flex;
+    gap: 9px;
+}
+
+.div {
+    width: 40px;
+    height: 40px;
+    background-color: #dbdad9;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 200px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    transition: all .37s ease;
+}
+
+.app:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transform: scale(1.04);
+
+}
+
+.icons {
+    transition: all .35s ease;
+}
+
+.icons:hover {
+    color: #F47B25;
+    cursor: pointer;
+    transform: scale(1.06);
+}
+
+.qw {
+    transition: all .35s ease;
+    width: 160px;
+}
+
+.qw:hover {
+    color: #F47B25;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+b {
+    cursor: pointer;
+}
+
+@media (max-width:720px) {
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+        padding: 35px 20px;
+        height: auto;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .we p,
+    .be p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .we p br,
+    .be p br {
+        display: none;
+    }
+
+    .qw {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .low {
+        flex-wrap: wrap;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+
+@media (max-width:480px) {
+
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px 15px;
+        height: auto;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .we p,
+    .be p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .we p br,
+    .be p br {
+        display: none;
+    }
+
+    .low {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .qw {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 260px;
+        height: 42px;
+        margin: 12px auto 0;
+    }
+
+    .us,
+    .to,
+    .be {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
