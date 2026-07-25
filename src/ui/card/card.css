@@ -144,7 +144,7 @@
 @media (max-width:480px) {
 
     .e {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
         padding: 0 15px;
     }

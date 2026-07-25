@@ -1,8 +1,10 @@
-import React from 'react';
 import { Search, Camera, User, ShoppingCart, Box } from 'lucide-react';
 import "./navbar.css";
 import { Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { CartContext } from "../cart/cart";
 const Navbar = () => {
+    const { cartCount, setCartCount } = useContext(CartContext);
     return (
         <>
             <div className="navbar">
@@ -34,7 +36,7 @@ const Navbar = () => {
                     <div className="nav-item cart-item">
                         <div className="cart-icon-wrapper">
                             <ShoppingCart size={22} />
-                            <span className="cart-badge">0</span>
+                            <span className="cart-badge">{cartCount}</span>
                         </div>
                         <span>Savat</span>
                     </div>

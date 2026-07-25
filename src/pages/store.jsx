@@ -113,28 +113,21 @@ const Store = () => {
                 <span>Asosiy</span> / <span>Yetkazib beruvchilar</span>
                 <b>{products.name}</b>
             </div>
-
             <div className="store-container">
                 <div className="store-card">
                     <div className="store-logo">
                         <img src={products.logoUrl} alt={products.name} />
                     </div>
-
                     <div className="store-info">
                         <h2>{products.name}</h2>
-
                         <span className="badge">{products.slug}</span>
-
                         <p>📍 {products.name}</p>
-
                         <div className="meta-info">
                             <p>⭐ 4.8 (120 ta sharh)</p>
                             <p>{products.experienceLabel}</p>
                         </div>
-
                         <p>⚡ {products.reliabilityScore} % Javob darajasi </p>
                     </div>
-
                     <div className="store-actions">
                         <button className="btn btn-follow">+ Follow</button>
                         <button className="btn btn-msg">
@@ -142,7 +135,6 @@ const Store = () => {
                         </button>
                     </div>
                 </div>
-
                 <div className="products-grid">
                     {getProducts.map((item, index) => (
                         <div className="product-card" key={index}>
@@ -159,7 +151,6 @@ const Store = () => {
                                     <span className="p-badge">
                                         {item.isnew}
                                     </span>
-
                                     <button  className="cart-btn">🛒</button>
                                 </div>
                             </div>
