@@ -3,6 +3,7 @@ import "./navbar.css";
 import { Link } from 'react-router-dom';
 import React, { useContext } from "react";
 import { CartContext } from "../cart/cart";
+import Carts from '../../pages/carts';
 const Navbar = () => {
     const { cartCount, setCartCount } = useContext(CartContext);
     return (
@@ -38,7 +39,9 @@ const Navbar = () => {
                             <ShoppingCart size={22} />
                             <span className="cart-badge">{cartCount}</span>
                         </div>
-                        <span>Savat</span>
+                        <Link to={"/carts"}>
+                            <span>Savat</span>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -46,5 +49,4 @@ const Navbar = () => {
         </>
     );
 };
-
 export default Navbar;

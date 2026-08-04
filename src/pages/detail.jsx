@@ -11,6 +11,29 @@ const Detail = () => {
     const [count, setCount] = useState(1);
     const totalPrice = Number(product?.discountedPrice || 0) * count;
     const { cartCount, setCartCount } = useContext(CartContext);
+
+
+    function handeAddCart(product, quantity) {
+        let cart = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+        const exist = cart.find((item) => item.id === product.id);
+
+        if (exist) {
+            exist.quantity += quantity;
+        } else {
+            cart.push({
+                ...product,
+                quantity,
+            });
+        }
+
+        localStorage.setItem("cartProducts", JSON.stringify(cart));
+    }
+
+    const handleCart = () => {
+        handeAddCart(product, count);
+        setCartCount(cartCount + 1);
+    };
     const minusClick = () => {
         setCount(count + 1);
     };
@@ -111,8 +134,7 @@ const Detail = () => {
                     </div>
 
                 </div>
-                3[[]] 
-               </div>
+            </div>
 
             <div className="yyy">
                 <div className="zzz">
@@ -190,7 +212,7 @@ const Detail = () => {
                             <span>RFQ</span>
                         </div>
 
-                        <button onClick={() => setCartCount(cartCount + 1)} style={{ background: "orange" }} className="hhhh">
+                        <button onClick={handleCart} style={{ background: "orange" }} className="hhhh">
                             <ShoppingCart
                                 size={19}
                                 style={{ marginRight: "8px" }}
