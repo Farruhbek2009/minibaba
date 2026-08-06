@@ -100,7 +100,7 @@ const Store = () => {
     }, [slug]);
 
     if (loading) {
-        return <h2>Loading...</h2>;
+        return <h2 style={{marginLeft:"140px"}}>Loading...</h2>;
     }
 
     if (!products) {
@@ -151,7 +151,7 @@ const Store = () => {
                                     <span className="p-badge">
                                         {item.isnew}
                                     </span>
-                                    <button  className="cart-btn">🛒</button>
+                                    <button className="cart-btn">🛒</button>
                                 </div>
                             </div>
                         </div>

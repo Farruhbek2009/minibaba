@@ -1,0 +1,43 @@
+.Toastify__toast-container--top-center {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.Toastify__toast {
+    width: 340px;
+    min-height: 64px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.Toastify__close-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    opacity: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    background: transparent;
+
+    transition: .3s;
+}
+
+.Toastify__close-button:hover {
+    background: red;
+    color: #fff;
+}
+
+.Toastify__close-button>svg {
+    width: 18px;
+    height: 18px;
+}
+
+.Toastify__progress-bar {
+    background: #16c60c;
+}

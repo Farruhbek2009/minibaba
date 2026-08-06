@@ -6,31 +6,34 @@
 
 .e {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
 .g {
-    background-color: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    display: flex;
-    height: 300px;
-    position: relative;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.g:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
 .h {
     position: relative;
     width: 100%;
-    padding-top: 100%;
-    background-color: #f7f7f7;
+    aspect-ratio: 1/1;
+    background: #f8f8f8;
 }
 
 .h img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 26vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -48,31 +51,27 @@
 }
 
 .j {
-    position: absolute;
-    z-index: 3;
-    bottom: 4px;
     padding: 14px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .k {
-    font-size: 13px;
-    color: #333333;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 8px;
-    height: 36px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .l {
-    position: absolute;
-    bottom: 30px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
-    color: #111111;
-    margin-bottom: 4px;
+    color: #111;
 }
 
 .m {
@@ -85,10 +84,10 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
-    color: #10b981;
-    font-weight: 600;
     margin-top: auto;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .o {
@@ -99,6 +98,30 @@
     height: 13px;
     border: 1.5px solid #10b981;
     border-radius: 50%;
+}
+
+@media(max-width:900px) {
+
+    .e {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media(max-width:700px) {
+
+    .e {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .e {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (max-width:720px) {

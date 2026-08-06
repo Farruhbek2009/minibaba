@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Check } from "lucide-react";
+import api from "../axios/axios";
 import { useNavigate } from "react-router-dom";
 import "./card.css";
 import { toast } from 'react-toastify'
@@ -10,12 +11,8 @@ const Card = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await fetch(
-                    "https://uzum-api.onrender.com/api/products"
-                );
-                const data = await res.json();
-
-                setProducts(data.data);
+                const res = await api.get("/products");
+                setProducts(res.data.data);
             } catch (error) {
                 console.log(error);
             }

@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../ui/cart/cart";
+import { toast } from "react-toastify";
 const Detail = () => {
     const { slug } = useParams();
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState([]);
     const [mainImage, setMainImage] = useState("");
     const [count, setCount] = useState(1);
     const totalPrice = Number(product?.discountedPrice || 0) * count;
@@ -33,6 +34,7 @@ const Detail = () => {
     const handleCart = () => {
         handeAddCart(product, count);
         setCartCount(cartCount + 1);
+        toast.success("Savatga qo'shildi!");
     };
     const minusClick = () => {
         setCount(count + 1);
@@ -60,7 +62,7 @@ const Detail = () => {
         fetchProduct();
     }, [slug]);
     if (!product) {
-        return <h2>Loading...</h2>;
+        return <h2 style={{ marginLeft: "140px" }}>Loading...</h2>;
     }
     return (
 

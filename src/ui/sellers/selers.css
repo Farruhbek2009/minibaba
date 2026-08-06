@@ -5,8 +5,8 @@
 .bbbbb {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 15px 140px;
+    gap: 10px;
+    padding: 5px 140px;
 }
 
 .ccccc {
@@ -61,7 +61,7 @@
 .hhhhh,
 .iiiii {
     font-weight: bold;
-    background-color:#F5F2F0;
+    background-color: #F5F2F0;
     width: 90px;
     height: 34px;
     text-align: center;
@@ -103,136 +103,124 @@
     cursor: pointer;
 }
 
-@media (max-width:720px){
+/* ========== Tablet ========== */
 
-    .aaaaa{
-        padding:20px;
+@media (max-width:992px) {
+
+    .lite {
+        padding: 15px 30px;
     }
 
-    .lite{
-        padding:15px 20px;
+    .bbbbb {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 30px;
+        gap: 20px;
     }
 
-    .lite h2{
-        font-size:20px;
-    }
-
-    .bbbbb{
-        grid-template-columns:repeat(2,1fr);
-        padding:20px;
-        gap:20px;
-        justify-items:center;
-    }
-
-    .ccccc{
-        width:100%;
-        max-width:260px;
-    }
-
-    .ddddd img{
-        left:50%;
-        transform:translateX(-50%);
-    }
-
-    .eeeee{
-        left:50%;
-        transform:translateX(-50%);
-        width:100%;
-    }
-
-    .fffff{
-        left:50%;
-        transform:translateX(-50%);
-        width:100%;
-        text-align:center;
-    }
-
-    .ggggg{
-        left:50%;
-        transform:translateX(-50%);
-        width:90%;
-        justify-content:space-between;
-    }
-
-    .jjjjjbtn{
-        left:50%;
-        transform:translateX(-50%);
-        width:90%;
+    .ccccc {
+        width: 100%;
+        max-width: 300px;
+        justify-self: center;
     }
 
 }
 
 
-@media (max-width:480px){
+/* ========== Mobile ========== */
 
-    .aaaaa{
-        padding:15px;
+@media (max-width:768px) {
+
+    .lite {
+        padding: 15px;
     }
 
-    .lite{
-        padding:10px 0;
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
+    .lite h2 {
+        font-size: 22px;
     }
 
-    .lite h2{
-        font-size:18px;
+    .lite h3 {
+        font-size: 15px;
     }
 
-    .lite h3{
-        font-size:15px;
+    .bbbbb {
+        grid-template-columns: 1fr;
+        padding: 15px;
     }
 
-    .bbbbb{
-        grid-template-columns:1fr;
-        padding:0;
-        gap:20px;
-        justify-items:center;
+    .ccccc {
+        width: 100%;
+        max-width: 340px;
+        margin: auto;
     }
 
-    .ccccc{
-        width:100%;
-        max-width:320px;
+    .ddddd img {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .ddddd img{
-        left:50%;
-        transform:translateX(-50%);
+    .eeeee {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
     }
 
-    .eeeee{
-        left:50%;
-        transform:translateX(-50%);
-        width:100%;
-        font-size:17px;
-        text-align:center;
+    .fffff {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
     }
 
-    .fffff{
-        left:50%;
-        transform:translateX(-50%);
-        width:100%;
-        text-align:center;
-        font-size:13px;
+    .ggggg {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: space-between;
     }
 
-    .ggggg{
-        left:50%;
-        transform:translateX(-50%);
-        width:90%;
-        justify-content:space-between;
+    .jjjjjbtn {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+}
+
+
+/* ========== Small phones ========== */
+
+@media (max-width:480px) {
+
+    .aaaaa {
+        padding: 10px;
+    }
+
+    .lite {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .lite h2 {
+        font-size: 18px;
+    }
+
+    .lite h3 {
+        font-size: 14px;
+    }
+
+    .ccccc {
+        height: 260px;
+    }
+
+    .ggggg {
+        gap: 10px;
     }
 
     .hhhhh,
-    .iiiii{
-        width:100px;
-    }
-
-    .jjjjjbtn{
-        left:50%;
-        transform:translateX(-50%);
-        width:90%;
+    .iiiii {
+        width: 110px;
     }
 
 }
