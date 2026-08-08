@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./store.css";
-
+import { ShoppingCart } from 'lucide-react';
 const Store = () => {
     const { slug } = useParams();
     const [products, setProducts] = useState(null);
@@ -151,7 +151,7 @@ const Store = () => {
                                     <span className="p-badge">
                                         {item.isnew}
                                     </span>
-                                    <button className="cart-btn">🛒</button>
+                                    <button className="cart-btn" ><ShoppingCart/></button>
                                 </div>
                             </div>
                         </div>
