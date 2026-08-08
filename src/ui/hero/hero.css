@@ -428,7 +428,8 @@
 
   .mid {
     padding: 15px;
-    gap: 15px;
+    padding-bottom: 100px;
+    height: 100px;
   }
 
   .sidebar {

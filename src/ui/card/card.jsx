@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Check } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
+
 import api from "../axios/axios";
 import { useNavigate } from "react-router-dom";
 import "./card.css";
-import { toast } from 'react-toastify'
+
 const Card = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
@@ -23,79 +28,96 @@ const Card = () => {
 
     return (
         <div className="middle">
-            <div className="e">
 
+            <Swiper
+                modules={[Autoplay]}
+                slidesPerView={4}
+                spaceBetween={20}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 12,
+                    },
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 18,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                }}
+                className="product-swiper"
+            >
                 {products.map((product) => (
+                    <SwiperSlide key={product.id}>
+                        <div className="g" onClick={() => navigate(`/detail/${product.slug}`)}>
+                            <div className="h">
+                                {product.discountPercent > 0 && (
+                                    <span className="i">
+                                        -{product.discountPercent}%
+                                    </span>
+                                )}
+                                <img
+                                    src={product.imageUrl}
+                                    alt={product.name}
+                                />
+                            </div>
+                            <div className="j">
+                                <h3 className="k">
+                                    {product.name}
+                                </h3>
 
-                    <div
-                        key={product.id}
-                        className="g"
-                        onClick={() => navigate(`/detail/${product.slug}`)}
-                        style={{ cursor: "pointer" }}
-                    >
+                                <p className="slug">
+                                    {product.slug}
+                                </p>
 
-                        <div className="h">
+                                <h3 className="k">
+                                    Minimal buyurtma:{" "}
+                                    {product.minOrderQuantity}
+                                </h3>
 
-                            {product.discountPercent > 0 && (
-                                <span className="i">
-                                    -{product.discountPercent}%
-                                </span>
-                            )}
+                                <p className="l">
+                                    {product.discountedPrice}{" "}
+                                    {product.currency}
+                                </p>
 
-                            <img
-                                src={product.imageUrl}
-                                alt={product.name}
-                            />
+                                <div className="n">
 
-                        </div>
+                                    <div className="o">
+                                        <Check
+                                            size={10}
+                                            strokeWidth={3}
+                                        />
+                                    </div>
 
-                        <div className="j">
+                                    <div>
+                                        {product.isVerifiedSeller
+                                            ? "Tasdiqlangan"
+                                            : "Tasdiqlanmagan"}
+                                    </div>
 
-                            <h3 className="k">
-                                {product.name}
-                            </h3>
-
-                            <p
-                                style={{
-                                    fontSize: "12px",
-                                    color: "#888",
-                                }}
-                            >
-                                {product.slug}
-                            </p>
-
-                            <h3 className="k">
-                                Minimal buyurtma: {product.minOrderQuantity}
-                            </h3>
-
-                            <p className="l">
-                                {product.discountedPrice} {product.currency}
-                            </p>
-
-                            <div className="n">
-
-                                <div className="o">
-                                    <Check
-                                        size={10}
-                                        strokeWidth={3}
-                                    />
-                                </div>
-
-                                <div>
-                                    {product.isVerifiedSeller
-                                        ? "Tasdiqlangan"
-                                        : "Tasdiqlanmagan"}
                                 </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                    </SwiperSlide>
 
                 ))}
 
-            </div>
+            </Swiper>
+
         </div>
     );
 };

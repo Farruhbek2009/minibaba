@@ -175,12 +175,28 @@
     border-radius: 7px;
     transition: all .35s ease;
 }
-.cart-btn:hover{
+
+.cart-btn:hover {
     background-color: white;
     border: 1px solid black;
     color: black;
     cursor: pointer;
 }
+
+.seller-swiper {
+    width: 100%;
+    padding: 5px 0 15px;
+}
+
+.seller-swiper .swiper-slide {
+    height: auto;
+}
+
+.seller-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 @media (max-width: 720px) {
 
     .breadcrumb {
@@ -242,88 +258,88 @@
 
 
 
-@media (max-width:480px){
+@media (max-width:480px) {
 
-    .breadcrumb{
-        padding:10px 15px;
-        font-size:12px;
+    .breadcrumb {
+        padding: 10px 15px;
+        font-size: 12px;
     }
 
-    .store-container{
-        padding:0 15px;
+    .store-container {
+        padding: 0 15px;
     }
 
-    .store-card{
-        padding:15px;
-        border-radius:12px;
+    .store-card {
+        padding: 15px;
+        border-radius: 12px;
     }
 
-    .store-logo{
-        width:90px;
-        height:90px;
+    .store-logo {
+        width: 90px;
+        height: 90px;
     }
 
-    .store-info h2{
-        font-size:18px;
+    .store-info h2 {
+        font-size: 18px;
     }
 
-    .badge{
-        font-size:10px;
+    .badge {
+        font-size: 10px;
     }
 
     .location,
     .meta-info,
-    .response-rate{
-        font-size:12px;
+    .response-rate {
+        font-size: 12px;
     }
 
-    .store-actions{
-        flex-direction:column;
-        gap:10px;
+    .store-actions {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .btn{
-        width:100%;
-        padding:12px;
+    .btn {
+        width: 100%;
+        padding: 12px;
     }
 
-    .btn-msg{
-        width:100%;
-        justify-content:center;
+    .btn-msg {
+        width: 100%;
+        justify-content: center;
     }
 
-    .products-grid{
-        grid-template-columns:1fr;
-        gap:15px;
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .product-card{
-        padding:12px;
+    .product-card {
+        padding: 12px;
     }
 
-    .product-card img{
-        height:220px;
+    .product-card img {
+        height: 220px;
     }
 
-    .p-name{
-        font-size:13px;
-        height:auto;
+    .p-name {
+        font-size: 13px;
+        height: auto;
     }
 
-    .p-price{
-        font-size:18px;
+    .p-price {
+        font-size: 18px;
     }
 
-    .p-footer{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
+    .p-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
-    .cart-btn{
-        width:100%;
-        padding:10px;
-        font-size:18px;
+    .cart-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
     }
 
 }

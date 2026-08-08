@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./selers.css";
 import { ShieldPlus } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 const Selers = () => {
     const navigate = useNavigate();
     const [sellers, setSellers] = useState([]);
@@ -26,33 +29,93 @@ const Selers = () => {
                 <h3>Hammasi</h3>
             </div>
             <div className="bbbbb">
-                {sellers.map((seller) => (
-                    <div key={seller.id} className="ccccc">
-                        <div className="ddddd">
-                            <img src={seller.logoUrl} alt={seller.name} />
-                        </div>
-                        <h3 className="eeeee">{seller.name}</h3>
-                        <p className="fffff">{seller.experienceLabel} • {seller.location}</p>
 
-                        <div className="ggggg">
-                            <div className="hhhhh">
-                                <span>{seller.reliabilityScore}%</span>
-                                <p>Ishonchlilik</p>
-                            </div>
-                            <div className="iiiii">
-                                <span>{seller.responseTimeSeconds}s</span>
-                                <p>Javob vaqti</p>
-                            </div>
-                        </div>
+                <Swiper
+                    modules={[Autoplay]}
+                    slidesPerView={4}
+                    spaceBetween={30}
+                    loop={true}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 15,
+                        },
+                        576: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                    }}
+                    className="seller-swiper"
+                >
 
-                        <button
-                            className="jjjjjbtn"
-                            onClick={() => navigate(`/store/${seller.slug}`)}
-                        >
-                            Sotuvchi sahifasi
-                        </button>
-                    </div>
-                ))}
+                    {sellers.map((seller) => (
+
+                        <SwiperSlide key={seller.id}>
+
+                            <div className="ccccc">
+
+                                <div className="ddddd">
+                                    <img
+                                        src={seller.logoUrl}
+                                        alt={seller.name}
+                                    />
+                                </div>
+
+                                <h3 className="eeeee">
+                                    {seller.name}
+                                </h3>
+
+                                <p className="fffff">
+                                    {seller.experienceLabel} • {seller.location}
+                                </p>
+
+                                <div className="ggggg">
+
+                                    <div className="hhhhh">
+                                        <span>
+                                            {seller.reliabilityScore}%
+                                        </span>
+                                        <p>Ishonchlilik</p>
+                                    </div>
+
+                                    <div className="iiiii">
+                                        <span>
+                                            {seller.responseTimeSeconds}s
+                                        </span>
+                                        <p>Javob vaqti</p>
+                                    </div>
+
+                                </div>
+
+                                <button
+                                    className="jjjjjbtn"
+                                    onClick={() =>
+                                        navigate(`/store/${seller.slug}`)
+                                    }
+                                >
+                                    Sotuvchi sahifasi
+                                </button>
+
+                            </div>
+
+                        </SwiperSlide>
+
+                    ))}
+
+                </Swiper>
+
             </div>
         </div>
     );
