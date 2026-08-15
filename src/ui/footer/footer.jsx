@@ -1,68 +1,143 @@
-import React from 'react'
-import "./footer.css"
-import { Box, Earth, Mail, Phone } from 'lucide-react';
+import React from "react";
+import "./footer.css";
+import { Box, Earth, Mail, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+
+    const { t } = useTranslation();
+
     return (
         <>
-            <div className='footer'>
+            <div className="footer">
                 <div>
+
                     <div className="logo">
+
                         <div className="logo-card">
                             <Box size={20} color="white" />
                         </div>
+
                         <h2>Minibaba</h2>
+
                     </div>
+
                     <br />
+
                     <div className="we">
+
                         <p>
-                            O'zbekistondagi eng yirik ulgurji savdo <br />
-                            platformasi. Biz tadbirkorlar va zavodlarni <br />
-                            bitta joyga jamlaymiz.
-                        </p> <br />
+                            {t("footer_description")}
+                        </p>
+
+                        <br />
+
                         <div className="low">
+
                             <div className="div">
-                                <Earth className='icons' />
+                                <Earth className="icons" />
                             </div>
+
                             <div className="div">
-                                <Mail className='icons' />
+                                <Mail className="icons" />
                             </div>
+
                             <div className="div">
-                                <Phone className='icons' />
+                                <Phone className="icons" />
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
                 <div className="us">
-                    <b>Xaridorlar uchun</b><br /> <br />
-                    <p className='qw'>Qanday buyurtma </p><br />
-                    <p className='qw'>To'lov usullari</p><br />
-                    <p className='qw'>Yetkazib berish</p><br />
-                    <p className='qw'>Kafolat va qaytarish</p> <br />
+
+                    <b>{t("buyers")}</b>
+
+                    <br />
+                    <br />
+
+                    <p className="qw">
+                        {t("how_to_order")}
+                    </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("payment_methods")}
+                    </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("delivery")}
+                    </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("warranty_return")}
+                    </p>
+
+                    <br />
+
                 </div>
                 <div className="to">
-                    <b>Sotuvchilar uchun</b> <br /><br />
-                    <p className='qw'>Sotuvchi bo'lish</p><br />
-                    <p className='qw'>Sotuvchilar qoidalari</p><br />
-                    <p className='qw'>Reklama va marketing</p><br />
-                    <p className='qw'>Logistika yordami</p>
-                </div>
-                <div className="be">
-                    <b>Ilovamizni yuklang</b> <br /><br />
-                    <p>
-                        Har doim aloqada bo'ling va eng yaxshi <br />
-                        narxlardan xabardor bo'ling.
+
+                    <b>{t("sellers")}</b>
+
+                    <br />
+                    <br />
+
+                    <p className="qw">
+                        {t("become_seller")}
                     </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("seller_rules")}
+                    </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("advertising_marketing")}
+                    </p>
+
+                    <br />
+
+                    <p className="qw">
+                        {t("logistics_help")}
+                    </p>
+
+                </div>
+
+                <div className="be">
+
+                    <b>{t("download_app")}</b>
+
+                    <br />
+                    <br />
+
+                    <p>
+                        {t("app_description")}
+                    </p>
+
                     <div className="app">
-                        <p>ios App Store</p>
+                        <p>iOS App Store</p>
                     </div>
+
                     <div className="app">
                         <p>Google Play</p>
                     </div>
+
                 </div>
+
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
