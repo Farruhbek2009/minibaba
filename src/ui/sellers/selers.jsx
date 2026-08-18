@@ -10,7 +10,6 @@ import "swiper/css";
 
 const Selers = () => {
     const navigate = useNavigate();
-
     const { t } = useTranslation();
 
     const [sellers, setSellers] = useState([]);
@@ -24,11 +23,11 @@ const Selers = () => {
 
                 const data = await response.json();
 
-                setSellers(data.data);
+                console.log("SELLERS:", data.data);
 
-                console.log(data.data);
+                setSellers(data.data || []);
             } catch (error) {
-                console.error("Xatolik:", error);
+                console.error("XATOLIK:", error);
             }
         };
 
@@ -36,14 +35,13 @@ const Selers = () => {
     }, []);
 
     return (
-        <div className="aaaaa">
+        <section className="aaaaa">
 
             <div className="lite">
-
                 <h2>
                     <ShieldPlus
                         size={20}
-                        style={{ color: "orange" }}
+                        color="orange"
                     />
 
                     {t("verified_sellers")}
@@ -52,57 +50,63 @@ const Selers = () => {
                 <h3>
                     {t("all")}
                 </h3>
-
             </div>
 
             <div className="bbbbb">
 
                 <Swiper
                     modules={[Autoplay]}
-                    slidesPerView={4}
-                    spaceBetween={30}
-                    loop={true}
+                    className="seller-swiper"
+
+                    slidesPerView={5}
+                    spaceBetween={20}
+
+                    loop={sellers.length >= 6}
+
                     autoplay={{
-                        delay: 1500,
+                        delay: 2000,
                         disableOnInteraction: false,
                     }}
+
                     breakpoints={{
-                        320: {
+                        0: {
                             slidesPerView: 1,
                             spaceBetween: 15,
                         },
+
                         576: {
                             slidesPerView: 2,
                             spaceBetween: 15,
                         },
+
                         768: {
                             slidesPerView: 3,
                             spaceBetween: 20,
                         },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 30,
+
+                        1100: {
+                            slidesPerView: 5,
+                            spaceBetween: 20,
                         },
                     }}
-                    className="seller-swiper"
                 >
 
                     {sellers.map((seller) => {
+
                         const experience =
-                            seller.experienceLabel?.match(/\d+/)?.[0] ||
-                            "";
+                            seller.experienceLabel
+                                ?.match(/\d+/)?.[0] || "";
+
                         return (
                             <SwiperSlide key={seller.id}>
 
                                 <div className="ccccc">
 
                                     <div className="ddddd">
-
                                         <img
                                             src={seller.logoUrl}
                                             alt={seller.name}
                                         />
-
                                     </div>
 
                                     <h3 className="eeeee">
@@ -111,31 +115,34 @@ const Selers = () => {
 
                                     <p className="fffff">
                                         {experience}{" "}
-                                        {t("years_experience")}{" "}
-                                        •{" "}
+                                        {t("years_experience")} •{" "}
                                         {seller.location}
                                     </p>
 
                                     <div className="ggggg">
 
                                         <div className="hhhhh">
-
                                             <span>
                                                 {seller.reliabilityScore}%
                                             </span>
+
                                             <p>
                                                 {t("reliability")}
                                             </p>
                                         </div>
+
                                         <div className="iiiii">
                                             <span>
                                                 {seller.responseTimeSeconds}s
                                             </span>
+
                                             <p>
                                                 {t("response_time")}
                                             </p>
                                         </div>
+
                                     </div>
+
                                     <button
                                         className="jjjjjbtn"
                                         onClick={() =>
@@ -156,8 +163,8 @@ const Selers = () => {
                 </Swiper>
 
             </div>
-
-        </div>
+        </section>
     );
 };
+
 export default Selers;

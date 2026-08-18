@@ -106,5 +106,10 @@
   "promo_placeholder": "Please enter promo code",
   "apply_discount": "Apply Discount",
   "back_to_shop": "Back to Shop",
-  "checkout": "Checkout"
+  "checkout": "Checkout",
+  "create_account": "Create Account",
+  "create_account_subtitle": "Create your account to get started",
+  "name": "Name",
+  "your_name": "Your name",
+  "already_have_account": "Already have an account?"
 }

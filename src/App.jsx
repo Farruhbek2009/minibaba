@@ -10,23 +10,23 @@ import Store from "./pages/store";
 import Carts from "./pages/carts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Register from "./pages/register";
 const App = () => {
   return (
     <>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/carts" element={<Carts />} />
         <Route path="/login" element={<Login />} />
         <Route path="/detail/:slug" element={<Detail />} />
         <Route path="/store/:slug" element={<Store />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-
       <Footer />
       <ToastContainer />
     </>
-  );
+  )
+    ;
 };
-
 export default App;

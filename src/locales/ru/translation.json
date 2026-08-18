@@ -106,5 +106,10 @@
     "promo_placeholder": "Введите промокод",
     "apply_discount": "Применить скидку",
     "back_to_shop": "Вернуться в магазин",
-    "checkout": "Оформить заказ"
+    "checkout": "Оформить заказ",
+    "create_account": "Создать аккаунт",
+    "create_account_subtitle": "Создайте аккаунт, чтобы начать",
+    "name": "Имя",
+    "your_name": "Ваше имя",
+    "already_have_account": "Уже есть аккаунт?"
 }

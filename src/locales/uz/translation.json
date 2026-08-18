@@ -106,5 +106,10 @@
     "promo_placeholder": "Promokodni kiriting",
     "apply_discount": "Chegirmani qo'llash",
     "back_to_shop": "Do'konga qaytish",
-    "checkout": "Buyurtma berish"
+    "checkout": "Buyurtma berish",
+    "create_account": "Hisob yaratish",
+    "create_account_subtitle": "Boshlash uchun hisobingizni yarating",
+    "name": "Ism",
+    "your_name": "Ismingiz",
+    "already_have_account": "Hisobingiz bormi?"
 }
