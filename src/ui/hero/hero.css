@@ -16,7 +16,7 @@
 }
 
 .sidebar {
-  width: 360px;
+  width: 280px;
   background-color: white;
   border-radius: 13px;
   height: 380px;
@@ -74,7 +74,7 @@
 }
 
 .f {
-  width: 840px;
+  width: 740px;
   height: 400px;
   position: relative;
   border-radius: 13px;
@@ -119,6 +119,7 @@
   margin-bottom: 15px;
   max-width: 500px;
   color: white;
+  margin-right: 290px;
 }
 
 .desc {
