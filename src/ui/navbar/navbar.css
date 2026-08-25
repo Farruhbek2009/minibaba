@@ -188,7 +188,10 @@ button:hover {
     background: none;
     color: #000000;
 }
-
+.come{
+    text-decoration: none;
+    color: black;
+}
 .language-btn .rotate {
     transform: rotate(180deg);
 }

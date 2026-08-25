@@ -154,7 +154,6 @@ const Hero = () => {
 
                 </div>
                 <div className="f">
-
                     <img
                         src="/rasm.png"
                         alt="Rasm"

@@ -4,42 +4,40 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import { useAuthStore } from "../store/authStore";
+
 const Login = () => {
     const { t } = useTranslation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const login = useAuthStore((state) => state.login);
     function onSubmit() {
-        const formData = {
-            email,
-            password
-        };
+        const formData = { email, password };
         setIsLoading(true);
-        axios.post(
-                "https://uzum-api.onrender.com/api/auth/login",
-                formData
-            )
-            .then((result) => {
-                console.log(result.data);
-                if (result.data.success) {
-                    localStorage.setItem(
-                        "accessToken",
-                        result.data.data.accessToken
-                    );
 
+        axios.post("https://uzum-api.onrender.com/api/auth/login", formData)
+            .then((result) => {
+                console.log("Login javobi:", result.data);
+
+                if (result.data.success) {
+                    const user = result.data.data;
+                    login({
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        accessToken: user.accessToken
+                    });
+                    console.log("Login muvaffaqiyatli:", user);
                     navigate("/");
                 } else {
-                    console.log(result.data);
+                    console.log("Login xatosi:", result.data);
+                    setIsLoading(false);
                 }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setIsLoading(false);
             });
     }
+
     return (
         <div className="login-wrapper">
             <div className="login-box">
@@ -86,14 +84,15 @@ const Login = () => {
                     onClick={onSubmit}
                     disabled={isLoading}
                 >
-                    {isLoading ? "Loading..." : t("login")}
+                    {isLoading
+                        ? "Loading..."
+                        : t("login")}
                 </button>
                 <div className="lin">
                     <div className="or"></div>
                     <p className="or-text">
                         {t("or")}
                     </p>
-
                     <div className="or"></div>
                 </div>
                 <Link to="/register">
@@ -105,5 +104,4 @@ const Login = () => {
         </div>
     );
 };
-
 export default Login;

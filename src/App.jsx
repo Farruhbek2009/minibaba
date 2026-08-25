@@ -7,10 +7,12 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Detail from "./pages/detail";
 import Store from "./pages/store";
-import Carts from "./pages/carts";
+import Carts from "./pages/carts"; 5
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Register from "./pages/register";
+import Profil from "./pages/profil";
+import Orders from "./ordersmenu/buyurtma";
 const App = () => {
   return (
     <>
@@ -22,11 +24,12 @@ const App = () => {
         <Route path="/detail/:slug" element={<Detail />} />
         <Route path="/store/:slug" element={<Store />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profil" element={<Profil />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
       <ToastContainer />
     </>
   )
-    ;
 };
 export default App;

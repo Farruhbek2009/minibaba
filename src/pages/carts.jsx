@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./carts.css";
 import { useTranslation } from "react-i18next";
-
+import { useNavigate } from "react-router-dom";
 const Carts = () => {
     const { t } = useTranslation();
 
@@ -10,7 +10,7 @@ const Carts = () => {
     const [promoCode, setPromoCode] = useState("");
 
     const deliveryFee = 20;
-
+    const navigate = useNavigate();
     useEffect(() => {
         const data =
             JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -156,7 +156,6 @@ const Carts = () => {
                         >
                             +
                         </button>
-
                     </div>
 
                     <div className="cart-price">
@@ -175,11 +174,19 @@ const Carts = () => {
                         className="remove-btn"
                         onClick={() =>
                             removeItem(item.id)
-                        }
-                    >
+                        } >
                         ✕
                     </button>
-
+                    <button
+                        className="orders"
+                        onClick={() =>
+                            navigate("/orders", {
+                                state: item
+                            })
+                        }
+                    >
+                        Buyurtma berish
+                    </button>
                 </div>
 
             ))}

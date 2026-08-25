@@ -19,7 +19,7 @@
   width: 360px;
   background-color: white;
   border-radius: 13px;
-  height: 400px;
+  height: 380px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
@@ -61,6 +61,7 @@
   align-items: center;
   gap: 12px;
 }
+
 
 .item-left svg {
   width: 18px;
@@ -117,6 +118,8 @@
   line-height: 1.2;
   margin-bottom: 15px;
   max-width: 500px;
+  color: white;
+  margin-right: 290px;
 }
 
 .desc {
@@ -488,7 +491,7 @@
     font-size: 18px;
   }
 
-  
+
 
   .p {
     grid-template-columns: 1fr;
